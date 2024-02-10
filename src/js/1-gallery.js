@@ -82,7 +82,6 @@ const galleryItem = images.map(image =>
       </li>`)
     .join('');
 
-console.log(galleryItem);
 gallery.innerHTML = galleryItem;
   
 
