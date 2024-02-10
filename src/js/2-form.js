@@ -80,30 +80,3 @@ restoreData();
 
 
 
-
-
-
-
-// function saveToLs(key, value) {
-//   const jsonData = JSON.stringify(value);
-//   localStorage.setItem(key, jsonData);
-// }
-
-// function loadFromLs(key) {
-//   const data = localStorage.getItem(key);
-
-//   try {
-//     const result = JSON.parse(data);
-//     return result;
-//   } catch {
-//     return data;
-//   }
-// }
-
-// function restoreData() {
-//   const data = loadFromLs(storagKey) || {};
-
-//   form.elements.email.value = (data.email || '').trim();
-//   form.elements.message.value = (data.message || '').trim();
-// }
-// restoreData();
