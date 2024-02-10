@@ -1,4 +1,4 @@
-const STORAG_KEY = 'feedback-form-state';
+const STORAGE_KEY = 'feedback-form-state';
 
 const form = document.querySelector('.feedback-form');
 const textarea = form.querySelector('textarea');
@@ -12,7 +12,7 @@ form.addEventListener('input', () => {
         message: userMessage,
     }
 
-    saveToLs(STORAG_KEY, data);
+    saveToLs(STORAGE_KEY, data);
 });
 
 
@@ -23,10 +23,10 @@ form.addEventListener('submit', e => {
         return alert('All form fields must be filled in');
     }
         
-    const data = loadFromLs(STORAG_KEY) || {};
+    const data = loadFromLs(STORAGE_KEY) || {};
     console.log(data);
     
-    localStorage.removeItem(STORAG_KEY);
+    localStorage.removeItem(STORAGE_KEY);
     form.reset();
 
 })
@@ -48,35 +48,10 @@ function saveToLs(key, value) {
 }
 
 function restoreData() {
-    const data = loadFromLs(STORAG_KEY) || {};
+    const data = loadFromLs(STORAGE_KEY) || {};
 
     form.elements.email.value = data.email || '';
     form.elements.message.value = data.message || '';
 }
 
 restoreData();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
