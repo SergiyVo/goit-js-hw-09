@@ -69,31 +69,25 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector('.gallery');
 
-function galleryTemplate(item) {
-    return `<li class="gallery-item">
-        <a class="gallery-link" href="${item.original}">
+const galleryItem = images.map(image =>
+    `<li class="gallery-item">
+        <a class="gallery-link" href="${image.original}">
           <img
             class="gallery-image"
-            src="${item.preview}"
-            data-source="${item.original}"
-            alt="${item.description}"
+            src="${image.preview}"
+            data-source="${image.original}"
+            alt="${image.description}"
           />
         </a>
-      </li>`;
-}
+      </li>`)
+    .join('');
 
-function addGalleryTemplate(images) {
-    return images.map(galleryTemplate).join('');
-}
-
-function render() {
-    const markup = addGalleryTemplate(images);
-    gallery.innerHTML = markup; 
-}
-
-render();
+console.log(galleryItem);
+gallery.innerHTML = galleryItem;
+  
 
 new SimpleLightbox('.gallery a', {
     captionDelay: 250,
     captionsData: 'alt',
 });
+
